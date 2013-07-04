@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import oomdptb.behavior.learning.EpsilonGreedy;
 import oomdptb.behavior.learning.LearningAgent;
 import oomdptb.behavior.options.Option;
 import oomdptb.behavior.EpisodeAnalysis;
@@ -39,6 +40,12 @@ public class QLearning extends OOMDPPlanner implements QComputablePlanner, Learn
 	protected int													numEpisodesToStore;
 	
 	
+	
+	public QLearning(Domain domain, RewardFunction rf, TerminalFunction tf, double gamma, Map <String, List<Attribute>> attributesForHashCode, 
+			double qInit, double learningRate, int maxEpisodeSize) {
+		this.QLInit(domain, rf, tf, gamma, attributesForHashCode, qInit, learningRate, new EpsilonGreedy(this, 0.1), maxEpisodeSize);
+	}
+	
 	public QLearning(Domain domain, RewardFunction rf, TerminalFunction tf, double gamma, Map <String, List<Attribute>> attributesForHashCode, 
 			double qInit, double learningRate, Policy learningPolicy, int maxEpisodeSize) {
 		this.QLInit(domain, rf, tf, gamma, attributesForHashCode, qInit, learningRate, learningPolicy, maxEpisodeSize);
@@ -60,6 +67,11 @@ public class QLearning extends OOMDPPlanner implements QComputablePlanner, Learn
 		numEpisodesForPlanning = 1;
 		maxQChangeForPlanningTermination = 0.;
 		
+	}
+	
+	
+	public void setLearningPolicy(Policy p){
+		this.learningPolicy = p;
 	}
 	
 	

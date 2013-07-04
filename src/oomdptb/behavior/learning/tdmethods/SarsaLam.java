@@ -21,6 +21,15 @@ public class SarsaLam extends QLearning {
 
 	protected double				lambda;
 	
+	
+	public SarsaLam(Domain domain, RewardFunction rf, TerminalFunction tf, double gamma, Map<String, List<Attribute>> attributesForHashCode, 
+			double qInit, double learningRate, int maxEpisodeSize, double lamda) {
+		
+		super(domain, rf, tf, gamma, attributesForHashCode, qInit, learningRate, maxEpisodeSize);
+		this.sarsalamInit(lamda);
+		
+	}
+	
 	public SarsaLam(Domain domain, RewardFunction rf, TerminalFunction tf, double gamma, Map<String, List<Attribute>> attributesForHashCode, 
 			double qInit, double learningRate, Policy learningPolicy, int maxEpisodeSize, double lamda) {
 		
