@@ -1,4 +1,4 @@
-package oomdptb.behavior.planning;
+package oomdptb.behavior.planning.commonpolicies;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,6 +6,7 @@ import java.util.Random;
 
 import oomdptb.behavior.Policy;
 import oomdptb.behavior.QValue;
+import oomdptb.behavior.planning.QComputablePlanner;
 import oomdptb.oomdp.GroundedAction;
 import oomdptb.oomdp.State;
 
