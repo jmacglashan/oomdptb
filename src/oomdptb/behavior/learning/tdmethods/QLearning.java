@@ -5,12 +5,12 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import oomdptb.behavior.learning.EpsilonGreedy;
 import oomdptb.behavior.learning.LearningAgent;
 import oomdptb.behavior.options.Option;
 import oomdptb.behavior.EpisodeAnalysis;
 import oomdptb.behavior.Policy;
 import oomdptb.behavior.QValue;
+import oomdptb.behavior.planning.EpsilonGreedy;
 import oomdptb.behavior.planning.OOMDPPlanner;
 import oomdptb.behavior.planning.QComputablePlanner;
 import oomdptb.behavior.planning.StateHashTuple;
